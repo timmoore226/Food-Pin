@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Rubik-Light.ttf">
+            <string>Rubik-Light</string>
+        </array>
         <array key="Rubik-Medium.ttf">
             <string>Rubik-Medium</string>
         </array>
@@ -175,21 +178,68 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AUI-Z5-Dqn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="AUI-Z5-Dqn" customClass="RestaurantDetailIconTextCell" customModule="Food_Pin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="378" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AUI-Z5-Dqn" id="sq5-0v-Rgq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OHV-dB-W1y">
+                                                    <rect key="frame" x="14" y="12" width="347" height="31.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Zu-AH-opw">
+                                                            <rect key="frame" x="0.0" y="6" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="CZ2-Yd-TiV"/>
+                                                                <constraint firstAttribute="width" constant="20" id="LEh-5B-JmL"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiB-cx-CDX">
+                                                            <rect key="frame" x="30" y="5.5" width="317" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="OHV-dB-W1y" secondAttribute="bottom" id="10h-Dp-LJ8"/>
+                                                <constraint firstItem="OHV-dB-W1y" firstAttribute="top" secondItem="sq5-0v-Rgq" secondAttribute="top" constant="12" id="dVU-GW-M2Y"/>
+                                                <constraint firstItem="OHV-dB-W1y" firstAttribute="leading" secondItem="sq5-0v-Rgq" secondAttribute="leading" constant="14" id="eKY-iD-Ivs"/>
+                                                <constraint firstAttribute="trailing" secondItem="OHV-dB-W1y" secondAttribute="trailing" constant="14" id="vs2-WX-Hhl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="0Zu-AH-opw" id="ot1-9F-uT6"/>
+                                            <outlet property="shortTextLabel" destination="qiB-cx-CDX" id="BPU-Lw-bEO"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0gI-19-f7w">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="0gI-19-f7w" customClass="RestaurantDetailTextCell" customModule="Food_Pin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="422" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0gI-19-f7w" id="rsG-gx-syP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZS-1g-Nmh">
+                                                    <rect key="frame" x="16" y="12" width="343" height="31.5"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3ZS-1g-Nmh" firstAttribute="leading" secondItem="rsG-gx-syP" secondAttribute="leading" constant="16" id="9ls-f5-fNr"/>
+                                                <constraint firstItem="3ZS-1g-Nmh" firstAttribute="top" secondItem="rsG-gx-syP" secondAttribute="top" constant="12" id="On4-71-RoP"/>
+                                                <constraint firstAttribute="bottom" secondItem="3ZS-1g-Nmh" secondAttribute="bottom" id="c95-WH-2GL"/>
+                                                <constraint firstAttribute="trailing" secondItem="3ZS-1g-Nmh" secondAttribute="trailing" constant="16" id="stH-ns-EFH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="3ZS-1g-Nmh" id="9C0-of-rrz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
