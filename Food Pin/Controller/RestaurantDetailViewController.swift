@@ -10,10 +10,8 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController {
 
-    @IBOutlet weak var restaurantImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: RestaurantDetailHeaderView!
     
     var restaurant: Restaurant = Restaurant()
     
@@ -22,10 +20,11 @@ class RestaurantDetailViewController: UIViewController {
 
         navigationItem.largeTitleDisplayMode = .never
         
-        restaurantImageView.image = UIImage(named: restaurant.image)
-        nameLabel.text = restaurant.name
-        locationLabel.text = restaurant.location
-        typeLabel.text = restaurant.type
+        // Configure header view
+        headerView.nameLabel.text = restaurant.name
+        headerView.typeLabel.text = restaurant.type
+        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
     }
 
     override func didReceiveMemoryWarning() {

@@ -113,36 +113,66 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FwI-Dy-DpG">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="OGz-Py-nTI" userLabel="Header View">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="OGz-Py-nTI" userLabel="Header View" customClass="RestaurantDetailHeaderView" customModule="Food_Pin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sb0-c8-gB8" userLabel="Header Image View">
-                                            <rect key="frame" x="8" y="8" width="359" height="334"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sb0-c8-gB8" userLabel="Header Image View">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlf-Bi-xCl" userLabel="Name Label">
-                                            <rect key="frame" x="22" y="266" width="92" height="42"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="35"/>
-                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-Py-cws" userLabel="Type Label">
-                                            <rect key="frame" x="22" y="316" width="100" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcM-8T-MTH" userLabel="Dim View">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-Py-cws" userLabel="Type Label">
+                                            <rect key="frame" x="14" y="316" width="100" height="20"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7am-q0-ikg"/>
+                                                <constraint firstAttribute="height" constant="20" id="imQ-1D-BwP"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlf-Bi-xCl" userLabel="Name Label">
+                                            <rect key="frame" x="14" y="272" width="91.5" height="41"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="35"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9pH-Vu-lKG" userLabel="Heart Image View">
+                                            <rect key="frame" x="122" y="319" width="15" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="XXR-GP-H3V"/>
+                                                <constraint firstAttribute="width" constant="15" id="zNs-hu-mHm"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="Sb0-c8-gB8" firstAttribute="leading" secondItem="OGz-Py-nTI" secondAttribute="leadingMargin" id="Lp3-e4-9r6"/>
-                                        <constraint firstItem="Sb0-c8-gB8" firstAttribute="bottom" secondItem="OGz-Py-nTI" secondAttribute="bottomMargin" id="rQ9-Hp-OqV"/>
-                                        <constraint firstItem="Sb0-c8-gB8" firstAttribute="top" secondItem="OGz-Py-nTI" secondAttribute="topMargin" id="uEC-g4-ngW"/>
-                                        <constraint firstItem="Sb0-c8-gB8" firstAttribute="trailing" secondItem="OGz-Py-nTI" secondAttribute="trailingMargin" id="xUN-73-aUx"/>
+                                        <constraint firstItem="KcM-8T-MTH" firstAttribute="top" secondItem="OGz-Py-nTI" secondAttribute="top" id="505-dC-QZI"/>
+                                        <constraint firstAttribute="trailing" secondItem="Sb0-c8-gB8" secondAttribute="trailing" id="5mL-xj-mmW"/>
+                                        <constraint firstItem="9pH-Vu-lKG" firstAttribute="centerY" secondItem="SnN-Py-cws" secondAttribute="centerY" id="6Rq-zJ-Vfi"/>
+                                        <constraint firstItem="SnN-Py-cws" firstAttribute="leading" secondItem="OGz-Py-nTI" secondAttribute="leading" constant="14" id="GqW-Zw-4th"/>
+                                        <constraint firstItem="KcM-8T-MTH" firstAttribute="leading" secondItem="OGz-Py-nTI" secondAttribute="leading" id="H9D-mr-bFn"/>
+                                        <constraint firstItem="9pH-Vu-lKG" firstAttribute="leading" secondItem="SnN-Py-cws" secondAttribute="trailing" constant="8" id="Jdg-X1-emV"/>
+                                        <constraint firstAttribute="trailing" secondItem="KcM-8T-MTH" secondAttribute="trailing" id="KPF-an-Ldz"/>
+                                        <constraint firstAttribute="bottom" secondItem="KcM-8T-MTH" secondAttribute="bottom" id="PhI-Pl-ioC"/>
+                                        <constraint firstItem="Sb0-c8-gB8" firstAttribute="top" secondItem="OGz-Py-nTI" secondAttribute="top" id="QoG-EC-iNS"/>
+                                        <constraint firstItem="SnN-Py-cws" firstAttribute="top" secondItem="Qlf-Bi-xCl" secondAttribute="bottom" constant="3" id="RsY-1J-KEc"/>
+                                        <constraint firstItem="Sb0-c8-gB8" firstAttribute="leading" secondItem="OGz-Py-nTI" secondAttribute="leading" id="Rvf-3P-Tza"/>
+                                        <constraint firstAttribute="bottom" secondItem="Sb0-c8-gB8" secondAttribute="bottom" id="Vxq-jC-gXR"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qlf-Bi-xCl" secondAttribute="trailing" constant="50" id="WD2-cc-wQF"/>
+                                        <constraint firstItem="Qlf-Bi-xCl" firstAttribute="leading" secondItem="SnN-Py-cws" secondAttribute="leading" id="nio-eD-1lK"/>
+                                        <constraint firstAttribute="bottom" secondItem="SnN-Py-cws" secondAttribute="bottom" constant="14" id="wRa-sh-GYi"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="headerImageView" destination="Sb0-c8-gB8" id="QUL-y2-pb0"/>
+                                        <outlet property="heartImageView" destination="9pH-Vu-lKG" id="p3n-f0-EUP"/>
+                                        <outlet property="nameLabel" destination="Qlf-Bi-xCl" id="AMd-SL-aXS"/>
+                                        <outlet property="typeLabel" destination="SnN-Py-cws" id="uwx-C9-uHU"/>
+                                    </connections>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AUI-Z5-Dqn">
@@ -173,6 +203,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uff-k4-BUr"/>
                     </view>
+                    <connections>
+                        <outlet property="headerView" destination="OGz-Py-nTI" id="4zD-cb-MCY"/>
+                        <outlet property="tableView" destination="FwI-Dy-DpG" id="FKt-Bx-IF0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGx-di-ry0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
