@@ -20,14 +20,23 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
         navigationItem.largeTitleDisplayMode = .never
         
+        // Configure the table view
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.contentInsetAdjustmentBehavior = .never
         
         // Configure header view
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
         headerView.headerImageView.image = UIImage(named: restaurant.image)
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
+        
+        
+        // Configure navigation bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
     }
 
     override func didReceiveMemoryWarning() {

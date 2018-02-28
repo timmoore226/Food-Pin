@@ -1,5 +1,5 @@
 //
-//  RestaurantTableTableViewController.swift
+//  RestaurantTableViewController.swift
 //  Food Pin
 //
 //  Created by Timothy Moore on 1/13/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantTableTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController {
 
     var restaurants:[Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal.", image: "cafedeadend.jpg", isVisited: false),
@@ -40,6 +40,12 @@ class RestaurantTableTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
+            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.foregroundColor: UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0), NSAttributedStringKey.font: customFont ]
+        }
     }
 
     override func didReceiveMemoryWarning() {
