@@ -15,9 +15,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     var restaurant: Restaurant = Restaurant()
     
+    // MARK: - View controller life style
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationItem.largeTitleDisplayMode = .never
         
         // Configure the table view
@@ -32,17 +34,26 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         headerView.headerImageView.image = UIImage(named: restaurant.image)
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
         
-        
-        // Configure navigation bar
+        // Configure the navigation bar appearance
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.hidesBarsOnSwipe = false
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - UITableViewDataSource methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -77,5 +88,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
         }
+    }
+    
+    // MARK: - Status Bar
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
