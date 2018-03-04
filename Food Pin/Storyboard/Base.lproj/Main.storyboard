@@ -14,6 +14,9 @@
         <array key="Rubik-Medium.ttf">
             <string>Rubik-Medium</string>
         </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Food Pin-->
@@ -106,11 +109,11 @@
             <objects>
                 <viewController id="f8k-qs-kbY" customClass="RestaurantDetailViewController" customModule="Food_Pin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QvG-ne-Ypl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FwI-Dy-DpG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="OGz-Py-nTI" userLabel="Header View" customClass="RestaurantDetailHeaderView" customModule="Food_Pin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -123,6 +126,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qLy-Dm-aIg">
+                                            <rect key="frame" x="313" y="286" width="52" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="SR3-ek-poF"/>
+                                                <constraint firstAttribute="height" constant="50" id="ucm-cA-Xcd"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-Py-cws" userLabel="Type Label">
                                             <rect key="frame" x="14" y="316" width="100" height="20"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -163,15 +173,49 @@
                                         <constraint firstItem="Sb0-c8-gB8" firstAttribute="leading" secondItem="OGz-Py-nTI" secondAttribute="leading" id="Rvf-3P-Tza"/>
                                         <constraint firstAttribute="bottom" secondItem="Sb0-c8-gB8" secondAttribute="bottom" id="Vxq-jC-gXR"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qlf-Bi-xCl" secondAttribute="trailing" constant="50" id="WD2-cc-wQF"/>
+                                        <constraint firstAttribute="trailing" secondItem="qLy-Dm-aIg" secondAttribute="trailing" constant="10" id="dlT-A0-m44"/>
                                         <constraint firstItem="Qlf-Bi-xCl" firstAttribute="leading" secondItem="SnN-Py-cws" secondAttribute="leading" id="nio-eD-1lK"/>
                                         <constraint firstAttribute="bottom" secondItem="SnN-Py-cws" secondAttribute="bottom" constant="14" id="wRa-sh-GYi"/>
+                                        <constraint firstItem="SnN-Py-cws" firstAttribute="bottom" secondItem="qLy-Dm-aIg" secondAttribute="bottom" id="wc2-NA-g5w"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="headerImageView" destination="Sb0-c8-gB8" id="QUL-y2-pb0"/>
                                         <outlet property="heartImageView" destination="9pH-Vu-lKG" id="p3n-f0-EUP"/>
                                         <outlet property="nameLabel" destination="Qlf-Bi-xCl" id="AMd-SL-aXS"/>
+                                        <outlet property="ratingImageView" destination="qLy-Dm-aIg" id="OSl-85-ZH7"/>
                                         <outlet property="typeLabel" destination="SnN-Py-cws" id="uwx-C9-uHU"/>
                                     </connections>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="eiP-7l-9vV">
+                                    <rect key="frame" x="0.0" y="725" width="375" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHz-Lv-uur">
+                                            <rect key="frame" x="15" y="29" width="345" height="47"/>
+                                            <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="47" id="Vnx-Er-nlE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Rate it">
+                                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="Lk4-iY-CUT" kind="presentation" identifier="showReview" id="Po8-qv-e6R"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="XHz-Lv-uur" secondAttribute="bottom" constant="14" id="Pmi-xL-R4y"/>
+                                        <constraint firstItem="XHz-Lv-uur" firstAttribute="leading" secondItem="eiP-7l-9vV" secondAttribute="leading" constant="15" id="btO-yz-r8l"/>
+                                        <constraint firstAttribute="trailing" secondItem="XHz-Lv-uur" secondAttribute="trailing" constant="15" id="s46-9o-aXc"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="AUI-Z5-Dqn" customClass="RestaurantDetailIconTextCell" customModule="Food_Pin" customModuleProvider="target">
@@ -312,7 +356,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uff-k4-BUr"/>
                     </view>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="headerView" destination="OGz-Py-nTI" id="4zD-cb-MCY"/>
                         <outlet property="tableView" destination="FwI-Dy-DpG" id="FKt-Bx-IF0"/>
@@ -351,6 +395,102 @@
             </objects>
             <point key="canvasLocation" x="2330" y="87"/>
         </scene>
+        <!--Review View Controller-->
+        <scene sceneID="dc7-2g-na7">
+            <objects>
+                <viewController id="Lk4-iY-CUT" customClass="ReviewViewController" customModule="Food_Pin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p2r-mT-e0h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vJK-0l-TNU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFh-iW-k5R">
+                                <rect key="frame" x="319" y="28" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="KX8-bz-mIe"/>
+                                    <constraint firstAttribute="width" constant="33" id="MrB-rH-WKy"/>
+                                </constraints>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <segue destination="Tlw-NJ-72j" kind="unwind" unwindAction="closeWithSegue:" id="aEk-OT-0Me"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IJ0-O6-fas">
+                                <rect key="frame" x="74" y="93" width="227" height="481"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZQ-UO-dc8">
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="82"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Love" image="love"/>
+                                        <connections>
+                                            <segue destination="Tlw-NJ-72j" kind="unwind" identifier="love" unwindAction="rateRestaurantWithSegue:" id="sft-kO-U7w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBN-FW-wDF">
+                                        <rect key="frame" x="0.0" y="92" width="181" height="83"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Cool" image="cool"/>
+                                        <connections>
+                                            <segue destination="Tlw-NJ-72j" kind="unwind" identifier="cool" unwindAction="rateRestaurantWithSegue:" id="77j-vD-K9Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzt-69-Cir">
+                                        <rect key="frame" x="0.0" y="185" width="227" height="86"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Happy" image="happy"/>
+                                        <connections>
+                                            <segue destination="Tlw-NJ-72j" kind="unwind" identifier="happy" unwindAction="rateRestaurantWithSegue:" id="Hbs-hO-CTl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zja-iS-HlT">
+                                        <rect key="frame" x="0.0" y="281" width="167" height="87"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Sad" image="sad"/>
+                                        <connections>
+                                            <segue destination="Tlw-NJ-72j" kind="unwind" identifier="sad" unwindAction="rateRestaurantWithSegue:" id="p8C-CI-dzF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjD-0f-fTA">
+                                        <rect key="frame" x="0.0" y="378" width="218" height="103"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Angry" image="angry"/>
+                                        <connections>
+                                            <segue destination="Tlw-NJ-72j" kind="unwind" identifier="angry" unwindAction="rateRestaurantWithSegue:" id="Xk4-es-4Hn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vFh-iW-k5R" firstAttribute="top" secondItem="p2r-mT-e0h" secondAttribute="top" constant="28" id="7RF-rK-XRu"/>
+                            <constraint firstItem="vJK-0l-TNU" firstAttribute="top" secondItem="p2r-mT-e0h" secondAttribute="top" id="AKh-ci-SSr"/>
+                            <constraint firstItem="vJK-0l-TNU" firstAttribute="trailing" secondItem="Bbx-c2-bNI" secondAttribute="trailing" id="KL1-61-LLc"/>
+                            <constraint firstItem="vJK-0l-TNU" firstAttribute="leading" secondItem="Bbx-c2-bNI" secondAttribute="leading" id="NlW-hZ-aw6"/>
+                            <constraint firstItem="IJ0-O6-fas" firstAttribute="centerY" secondItem="p2r-mT-e0h" secondAttribute="centerY" id="Rip-Zo-saV"/>
+                            <constraint firstItem="Bbx-c2-bNI" firstAttribute="trailing" secondItem="vFh-iW-k5R" secondAttribute="trailing" constant="23" id="WKX-SS-3ve"/>
+                            <constraint firstItem="IJ0-O6-fas" firstAttribute="centerX" secondItem="p2r-mT-e0h" secondAttribute="centerX" id="lAN-zb-wRy"/>
+                            <constraint firstItem="vJK-0l-TNU" firstAttribute="bottom" secondItem="Bbx-c2-bNI" secondAttribute="bottom" id="wEy-UK-LrI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bbx-c2-bNI"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="vJK-0l-TNU" id="66f-l4-ltZ"/>
+                        <outlet property="closeButton" destination="vFh-iW-k5R" id="7TS-8b-CIa"/>
+                        <outletCollection property="rateButtons" destination="EZQ-UO-dc8" collectionClass="NSMutableArray" id="ngC-om-AZJ"/>
+                        <outletCollection property="rateButtons" destination="iBN-FW-wDF" collectionClass="NSMutableArray" id="wfQ-1Y-JoK"/>
+                        <outletCollection property="rateButtons" destination="Lzt-69-Cir" collectionClass="NSMutableArray" id="MwY-tq-VLv"/>
+                        <outletCollection property="rateButtons" destination="Zja-iS-HlT" collectionClass="NSMutableArray" id="eR3-ir-4qn"/>
+                        <outletCollection property="rateButtons" destination="WjD-0f-fTA" collectionClass="NSMutableArray" id="sQ2-iE-3oQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ru8-lI-vmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Tlw-NJ-72j" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1356" y="986"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="9qg-Wm-7gA">
             <objects>
@@ -371,6 +511,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="angry" width="78" height="103"/>
+        <image name="cool" width="78" height="83"/>
+        <image name="cross" width="33" height="32"/>
+        <image name="happy" width="78" height="86"/>
         <image name="heart-tick" width="22" height="21"/>
+        <image name="love" width="78" height="82"/>
+        <image name="sad" width="78" height="87"/>
     </resources>
 </document>
